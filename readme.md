@@ -1,5 +1,5 @@
 Title: 
-Pancake Flippin
+#**Pancake Flippin**
 
 Description:
 When picking up your pancakes from the buffet, the server slapped on healthy tower of pancakes. 
@@ -8,7 +8,7 @@ But much to your shagrin, the tower is all out of order!
 
 In order to keep the pancakes piping hot, you must get the pancakes in ascending order in the least amount of moves possible. 
 
-Wireframe:
+##Wireframe:
 ![wireframe](https://i.imgur.com/D1ghKjR.png)
 
 MVP (Minimum Viable Product):
