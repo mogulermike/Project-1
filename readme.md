@@ -1,1 +1,1 @@
-![wireframe] (https://i.imgur.com/D1ghKjR.png)
+![wireframe](https://i.imgur.com/D1ghKjR.png)
