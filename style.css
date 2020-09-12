@@ -7,33 +7,64 @@ header {
     margin: 50px;
 }
 
-.plates {
+#container {
     display: flex;
     justify-content: center;
-    align-items: flex-end;
-    height: 100%;
-       
-}
-
-.wrapper {
     width: 50vw;
     height: 60vh;
     margin: 0 auto;
     background: purple;
 }
 
-.plates div {
+.plates {
     display: flex;
-    margin: 0 auto;
-    width: 180px;
-    height: 40px;
     justify-content: center;
+    align-items: flex-end;
+    height: 100%;      
 }
+
+.towerWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    background-color: lightgray;
+    border: 6px solid black;
+    height: 100%;
+    width: 100%;
+}
+.tower {
+    display: flex;
+    align-items: center;
+    border: 3px solid black;
+    flex-direction: column;
+}
+
 
 img {
     height: 90%;
     width: 100%;
 }
+
+.pancakes{
+    display: flex;
+    justify-content: center;
+
+}
+
+#pancake1 {
+    width: 40%;
+}
+
+#pancake2 {
+    width: 60%;
+}
+
+#pancake3 {
+    width: 90%;
+}
+
+
+
 
 
 /* .board {
