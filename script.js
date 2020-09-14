@@ -86,7 +86,7 @@ function selectPancake() {
     console.log("pancake " + selectedPancake + " selected");
     console.log(startArray)
 
-    document.querySelector(`#pancake${selectedPancake}`).style.border = "6px solid black";
+    document.querySelector(`#pancake${selectedPancake}`).style.border = "2px solid red";
     
     tower1.removeEventListener('click', tower1Start);
     tower2.removeEventListener('click', tower2Start);
