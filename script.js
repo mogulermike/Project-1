@@ -183,7 +183,7 @@ function movePancake() {
     if (array3.length === 3 && count === 7) {
         alert("you win!!")
     } else if (array2.length === 3) {
-        console.log("close... but keep going")
+        alert("close... but keep going")
     } else if (array3.length === 3) {
         alert("You can do better than that...")
     }
