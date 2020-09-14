@@ -33,6 +33,7 @@ let lowerPancake;
 let startArray;
 let endArray;
 let tower;
+let count = 0;
 
 
 
@@ -51,6 +52,9 @@ function selectTower() {
     tower1.addEventListener('click', tower1Start);
     tower2.addEventListener('click', tower2Start);
     tower3.addEventListener('click', tower3Start);
+    document.querySelector('#pancake1').removeEventListener('click', selectTower)
+    document.querySelector('#pancake2').removeEventListener('click', selectTower)
+    document.querySelector('#pancake3').removeEventListener('click', selectTower)
 }
 
 function tower1Start() {
@@ -121,19 +125,36 @@ function tower3End() {
 function pancakeCheck() {
     if (endArray.length === 0) {
         movePancake();
+        console.log("if")
+        tower1.removeEventListener('click', tower1End);
+        tower2.removeEventListener('click', tower2End);
+        tower3.removeEventListener('click', tower3End);
+    } else if (endArray[0] === startArray[0]){
+        console.log("same tower")
+        count --;
+        movePancake();
+        tower1.removeEventListener('click', tower1End);
+        tower2.removeEventListener('click', tower2End);
+        tower3.removeEventListener('click', tower3End);
     } else if (selectedPancake <= lowerPancake) {
         movePancake();
+        console.log("2nd")
+        tower1.removeEventListener('click', tower1End);
+        tower2.removeEventListener('click', tower2End);
+        tower3.removeEventListener('click', tower3End);
     } else {
         console.log("dont do anything")
-        selection.style.border = "none";
+        document.querySelector(`#pancake${selectedPancake}`).style.border = "none";
+        selectPancake();
+        
     }
-    tower1.removeEventListener('click', tower1End);
-    tower2.removeEventListener('click', tower2End);
-    tower3.removeEventListener('click', tower3End);
 }
 
 
 function movePancake() {
+    count ++;
+    document.querySelector('#count').innerText = count;
+    console.log(count)
     const selection =document.querySelector(`#pancake${selectedPancake}`)
   
      // const towerName = document.querySelector('#pancake1').parentElement.id;
@@ -158,7 +179,14 @@ function movePancake() {
     endTower.prepend(selection);
     selection.addEventListener('click', selectTower)
 
-    
 
+    if (array3.length === 3) {
+        console.log("you win!!")
+    } else if (array2.length === 3) {
+        console.log("close... but keep going")
+    }
+    document.querySelector('#pancake1').addEventListener('click', selectTower)
+    document.querySelector('#pancake2').addEventListener('click', selectTower)
+    document.querySelector('#pancake3').addEventListener('click', selectTower)
 }
 
