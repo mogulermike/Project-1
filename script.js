@@ -180,10 +180,12 @@ function movePancake() {
     selection.addEventListener('click', selectTower)
 
 
-    if (array3.length === 3) {
-        console.log("you win!!")
+    if (array3.length === 3 && count === 7) {
+        alert("you win!!")
     } else if (array2.length === 3) {
         console.log("close... but keep going")
+    } else if (array3.length === 3) {
+        alert("You can do better than that...")
     }
     document.querySelector('#pancake1').addEventListener('click', selectTower)
     document.querySelector('#pancake2').addEventListener('click', selectTower)
