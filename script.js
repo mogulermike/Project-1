@@ -23,6 +23,7 @@ const towerWrapper = document.querySelector('.towerWrapper');
 const pancake1 = document.querySelector('#pancake1');
 const pancake2 = document.querySelector('#pancake2');
 const pancake3 = document.querySelector('#pancake3');
+
 array1 = [3,2,1];
 array2 = [];
 array3 = [];
@@ -41,7 +42,9 @@ let tower;
 //     selectTower();
 // });
 
-document.querySelector('.pancakes').addEventListener('click', selectTower)
+document.querySelector('#pancake1').addEventListener('click', selectTower)
+document.querySelector('#pancake2').addEventListener('click', selectTower)
+document.querySelector('#pancake3').addEventListener('click', selectTower)
 
 function selectTower() {
     console.log("select tower")
@@ -50,7 +53,6 @@ function selectTower() {
     tower3.addEventListener('click', tower3Start);
 }
 
-
 function tower1Start() {
     startTower = tower1;
     startArray = array1;
@@ -58,29 +60,29 @@ function tower1Start() {
 
     selectPancake();
 
-    console.log("starting tower " + tower + " located")
+    console.log("starting at tower 1")
 }
 function tower2Start() {
     startTower = tower2;
     startArray = array2;
-    console.log("starting tower " + tower + " located")
+    selectedPancake = startArray[startArray.length-1]
+    console.log("starting at tower 2")
+    selectPancake();
 }
 function tower3Start() {
     startTower = tower3;
     startArray = array3;
-    console.log("starting tower " + tower + " located")
+    selectedPancake = startArray[startArray.length-1]
+    console.log("starting at tower 3")
+    selectPancake();
 }
 
 
 function selectPancake() {
     console.log("pancake " + selectedPancake + " selected");
-    console.log("tower " + tower + " located!")
     console.log(startArray)
 
-    document.querySelector('.pancakes').style.border = "6px solid black";
-    
-
-
+    document.querySelector(`#pancake${selectedPancake}`).style.border = "6px solid black";
     
     tower1.removeEventListener('click', tower1Start);
     tower2.removeEventListener('click', tower2Start);
@@ -89,49 +91,50 @@ function selectPancake() {
     tower1.addEventListener('click', tower1End);
     tower2.addEventListener('click', tower2End);
     tower3.addEventListener('click', tower3End);
-
-    // tower1.addEventListener('click', movePancake);
-    // tower2.addEventListener('click', movePancake);
-    // tower3.addEventListener('click', movePancake);
-    //need to remove and append
-    //movePancake();
 }
 
 function tower1End() {
     endTower = tower1;
     endArray = array1;
-    selectedPancake = startArray[startArray.length-1]
     lowerPancake = endArray[endArray.length-1]
 
-    console.log("ending tower " + tower + " located")
+    console.log("ending tower 1")
+    pancakeCheck()
 }
 function tower2End() {
     endTower = tower2;
     endArray = array2;
-    console.log("ending tower " + tower + " located")
+    lowerPancake = endArray[endArray.length-1]
+    console.log("ending tower 2")
     pancakeCheck()
-
 
 }
 function tower3End() {
     endTower = tower3;
     endArray = array3;
-    console.log("ending tower " + tower + " located")
+    lowerPancake = endArray[endArray.length-1]
+    console.log("ending tower 3")
+    pancakeCheck()
 }
 
 
 function pancakeCheck() {
     if (endArray.length === 0) {
         movePancake();
-    } else if (selectedPancake < lowerPancake) {
+    } else if (selectedPancake <= lowerPancake) {
         movePancake();
     } else {
         console.log("dont do anything")
+        selection.style.border = "none";
     }
+    tower1.removeEventListener('click', tower1End);
+    tower2.removeEventListener('click', tower2End);
+    tower3.removeEventListener('click', tower3End);
 }
 
 
 function movePancake() {
+    const selection =document.querySelector(`#pancake${selectedPancake}`)
   
      // const towerName = document.querySelector('#pancake1').parentElement.id;
     // console.log(towerName)
@@ -142,38 +145,20 @@ function movePancake() {
     startArray.pop();
     endArray.push(selectedPancake);
     console.log(endArray);
+    console.log(startArray)
 
 
 
-    const tempPancake = document.querySelector('.pancakes');
-    document.querySelector('.pancakes').style.border = "none";
+    //const tempPancake = document.querySelector('.pancakes');
+    selection.style.border = "none";
     // tower1.removeChild(tower1.childNodes[0]);
     // tower2.prepend(tempPancake);
 
-    startTower.removeChild(startTower.childNodes[0]);
-    endTower.prepend(tempPancake);
+    startTower.removeChild(selection);
+    endTower.prepend(selection);
+    selection.addEventListener('click', selectTower)
 
     
 
 }
 
-
-
-
-//below is how i could get the name of the towerid, showing where each pancake is
-// const towerName = document.querySelector('#pancake1').parentElement.id;
-// console.log(towerName)
-
-// function determineTower() {
-//     if (document.querySelector('#tower1.pancakes')) {
-//         const selectedPancake = document.querySelector('#tower1.pancakes');
-//         //console.log(selectedPancake);
-//     } else {
-//         //console.log("there is no child in tower")
-//     }
-// }
-
-
-
-
-//console.log(document.querySelector('div.tower.pancakes'))
