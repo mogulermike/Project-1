@@ -18,6 +18,33 @@ newGameButton.addEventListener('click', function(event) {
     event.preventDefault();
     document.location.reload(true);
 });
+
+suddenDeathButton.addEventListener('click', function(event) {
+    // event.preventDefault();
+    //document.location.reload(true);
+    // 
+    let timeLeft = 10;
+    suddenDeath = true;
+    const timer = setInterval(function(){ 
+        if(timeLeft >= 0){
+            if(array3.length === 3 && suddenDeath){
+                document.querySelector('.messages').innerText = "Sudden Death Mode DEFEATED"
+                
+            } else {
+                document.querySelector(".timer").innerText = timeLeft;
+            }
+        } else if (timeLeft < 0 && array3.length !== 3 && suddenDeath){
+            document.querySelector('.messages').innerText = "Sudden Death Mode FAILED";
+            document.querySelector('body').style.background = "red";
+            clearInterval(timer);
+            
+        }
+        timeLeft -= 1;
+    }, 1000);
+ 
+});
+
+
 const towerWrapper = document.querySelector('.towerWrapper');
 
 const pancake1 = document.querySelector('#pancake1');
@@ -46,6 +73,9 @@ let count = 0;
 document.querySelector('#pancake1').addEventListener('click', selectTower)
 document.querySelector('#pancake2').addEventListener('click', selectTower)
 document.querySelector('#pancake3').addEventListener('click', selectTower)
+
+
+
 
 function selectTower() {
     console.log("select tower")
@@ -180,12 +210,12 @@ function movePancake() {
     selection.addEventListener('click', selectTower)
 
 
-    if (array3.length === 3 && count === 7) {
-        document.querySelector('.messages').innerText = "you win!!!"
-    } else if (array2.length === 3) {
+    if (array3.length === 3 && count === 7 && !suddenDeath) {
+        document.querySelector('.messages').innerText = "WOW!! You win!!!"
+    } else if (array2.length === 3 && !suddenDeath) {
         document.querySelector('.messages').innerText = "oops!! wrong tower"
-    } else if (array3.length === 3) {
-        document.querySelector('.messages').innerText = "you can do better than that..."
+    } else if (array3.length === 3 && !suddenDeath) {
+        document.querySelector('.messages').innerText = count + " moves?? You can do better than that..."
     }
     document.querySelector('#pancake1').addEventListener('click', selectTower)
     document.querySelector('#pancake2').addEventListener('click', selectTower)
