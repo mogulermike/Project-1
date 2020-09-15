@@ -7,15 +7,23 @@ body {
 
 header {
     text-align: center;
-    margin: 50px;
+    margin: 10px;
 }
 
 #container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     /* width: 50vw;
     height: 60vh; */
     /* background: purple; */
+}
+
+.messages {
+    height: 60px;
+    text-align: center;
+    font: 40px;
 }
 
 .towerWrapper {
@@ -40,14 +48,17 @@ header {
 img {
     display: block;
     width: 30%;
-    border: 3px solid gray;
 }
 
 .pancakes{
     display: flex;
     justify-content: center;
-    border: 3px solid blue;
-    padding: 0
+}
+
+.moves {
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
 
 }
 

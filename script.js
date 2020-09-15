@@ -181,11 +181,11 @@ function movePancake() {
 
 
     if (array3.length === 3 && count === 7) {
-        alert("you win!!")
+        document.querySelector('.messages').innerText = "you win!!!"
     } else if (array2.length === 3) {
-        alert("close... but keep going")
+        document.querySelector('.messages').innerText = "oops!! wrong tower"
     } else if (array3.length === 3) {
-        alert("You can do better than that...")
+        document.querySelector('.messages').innerText = "you can do better than that..."
     }
     document.querySelector('#pancake1').addEventListener('click', selectTower)
     document.querySelector('#pancake2').addEventListener('click', selectTower)
