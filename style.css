@@ -67,4 +67,25 @@ img {
 
 }
 
+/* #suddenDeathButton {
+    visibility: hidden;
+} */
+
+#undoImage {
+    position: absolute;
+    top: 65%;
+    left: 50%;
+    width: 500px;
+    height: 400px;
+    margin-top: -250px;
+    margin-left: -250px; 
+    visibility: hidden;
+ 
+}
+
+#undoImage.resize {
+    width:540px; /* you can use % */
+    height: auto;
+}
+
 

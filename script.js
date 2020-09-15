@@ -17,12 +17,20 @@ const newGameButton = document.querySelector('#newGameButton');
 newGameButton.addEventListener('click', function(event) {
     event.preventDefault();
     document.location.reload(true);
+    // document.querySelector('#suddenDeathButton').style.visibility = "visible";
+
 });
 
-suddenDeathButton.addEventListener('click', function(event) {
-    // event.preventDefault();
-    //document.location.reload(true);
-    // 
+const undoButton = document.querySelector('#undoButton');
+undoButton.addEventListener('click', function(event) {
+    document.querySelector('#undoImage').style.visibility = "visible";
+    document.querySelector('#newGameButton').style.borderColor = "red";
+    document.querySelector('#newGameButton').style.borderWidth = "thick";
+
+});
+
+const suddenDeathButton = document.querySelector('#suddenDeathButton');
+suddenDeathButton.addEventListener('click', function() {
     let timeLeft = 10;
     suddenDeath = true;
     const timer = setInterval(function(){ 
@@ -43,7 +51,20 @@ suddenDeathButton.addEventListener('click', function(event) {
     }, 1000);
  
 });
+// would like to have a different resetBoard function. But I want to spend more time styling. 
+// function resetGameBoard() {
+//     array1 = [3,2,1];
+//     array2 = [];
+//     array3 = [];
 
+//     for(i = 3; i< endArray.length; i--){
+//         const towerName = document.querySelector('#pancake1').parentElement.id;
+        
+//         tower1.removeChild(tower1.childNodes[0]);
+//         startTower.removeChild(selection);
+//         endTower.prepend(selection);
+//     }
+// }
 
 const towerWrapper = document.querySelector('.towerWrapper');
 
