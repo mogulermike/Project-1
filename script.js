@@ -17,21 +17,25 @@ undoButton.addEventListener('click', function(event) {
 
 });
 
+let suddenDeath = false;
 const suddenDeathButton = document.querySelector('#suddenDeathButton');
 suddenDeathButton.addEventListener('click', function() {
+    document.querySelector('body').style.background = "red";
     let timeLeft = 10;
     suddenDeath = true;
     const timer = setInterval(function(){ 
         if(timeLeft >= 0){
             if(array3.length === 3 && suddenDeath){
-                document.querySelector('.messages').innerText = "Sudden Death Mode DEFEATED"
+                document.querySelector('.messages').innerText = "PHEW!! Sudden Death Mode DEFEATED"
+                document.querySelector('body').style.background = "lemonchiffon";
                 
             } else {
                 document.querySelector(".timer").innerText = timeLeft;
             }
         } else if (timeLeft < 0 && array3.length !== 3 && suddenDeath){
             document.querySelector('.messages').innerText = "Sudden Death Mode FAILED";
-            document.querySelector('body').style.background = "red";
+            document.querySelector('.messages').style.color = "white";
+            document.querySelector('body').style.background = "black";
             clearInterval(timer);
             
         }
@@ -39,20 +43,7 @@ suddenDeathButton.addEventListener('click', function() {
     }, 1000);
  
 });
-// would like to have a different resetBoard function. But I want to spend more time styling. 
-// function resetGameBoard() {
-//     array1 = [3,2,1];
-//     array2 = [];
-//     array3 = [];
 
-//     for(i = 3; i< endArray.length; i--){
-//         const towerName = document.querySelector('#pancake1').parentElement.id;
-        
-//         tower1.removeChild(tower1.childNodes[0]);
-//         startTower.removeChild(selection);
-//         endTower.prepend(selection);
-//     }
-// }
 
 const towerWrapper = document.querySelector('.towerWrapper');
 
@@ -171,16 +162,12 @@ function movePancake() {
     document.querySelector('#count').innerText = count;
     const selection =document.querySelector(`#pancake${selectedPancake}`)
   
-     // const towerName = document.querySelector('#pancake1').parentElement.id;
-    // console.log(towerName)
 
     startArray.pop();
     endArray.push(selectedPancake);
 
-    //const tempPancake = document.querySelector('.pancakes');
     selection.style.border = "none";
-    // tower1.removeChild(tower1.childNodes[0]);
-    // tower2.prepend(tempPancake);
+
 
     startTower.removeChild(selection);
     endTower.prepend(selection);
