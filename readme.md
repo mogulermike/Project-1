@@ -1,6 +1,9 @@
 Title: 
 
-# **Pancake Flippin**
+# **Donut Stacking**
+
+GitHub Pages Link: https://mogulermike.github.io/Project-1/
+GitHub Repo Link: https://github.com/mogulermike/Project-1
 
 ## Description:
 
