@@ -24,4 +24,15 @@ Starts with 3 pancakes on a tray in the correct order. Move to plate in correct 
 
 2. Able to pick up mutliple pancakes if they are in correct order already. 
 
+## Technologies Used:
+Java script. Google. Instructors. 
+
+
+## Approach Taken:
+Make it work. Then make it better. I never got to making the code better, but definitely was able to make the style look better. 
+
+
+## Unsolved Problems:
+Sudden Death Button. Doesn't quite work as expected with the reload page. 
+Wanted to have donuts falling down the page when you win. 
 
