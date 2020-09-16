@@ -82,9 +82,9 @@ img {
 footer {
     display: flex;
     justify-content: space-between;
+    width: 780px;
     height: 40px;
     align-items: center;
-    width: 65%;
     background-color: brown;
     padding: 0px 10px;
     margin: 30px;

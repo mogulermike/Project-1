@@ -10,10 +10,12 @@ newGameButton.addEventListener('click', function(event) {
 });
 
 const undoButton = document.querySelector('#undoButton');
+const undoImage = document.querySelector('#undoImage');
 undoButton.addEventListener('click', function(event) {
     document.querySelector('#undoImage').style.visibility = "visible";
-    document.querySelector('#newGameButton').style.borderColor = "red";
-    document.querySelector('#newGameButton').style.borderWidth = "thick";
+    undoImage.addEventListener('click', function(event) {
+        document.querySelector('#undoImage').style.visibility = "hidden";
+    });
 
 });
 
