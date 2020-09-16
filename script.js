@@ -188,3 +188,4 @@ function movePancake() {
     document.querySelector('#pancake3').addEventListener('click', selectTower)
 }
 
+
