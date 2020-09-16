@@ -12,8 +12,20 @@
             <button id="newGameButton">New Game</button>
             <button id="suddenDeathButton">Sudden Death Mode</button>
         </header>
+        
+        
 
         <div id="container">
+            <aside class = "aside">
+                INSTRUCTIONS
+                <ol>
+                    <li>Move the stack of donuts from <br>the left box to the right.</li>
+                    <li>You can only select the top donut</li>
+                    <li>You must stack the donut correctly. <br>2 donuts can not be placed on 1 donut.</li>
+                  </ol>
+            </aside>
+
+
             <div class="top"></div>
                 <div class = "messages">
                     <div class = "timer"></div>
@@ -34,15 +46,17 @@
                     <div class="tower" id="tower3">
                     </div>
                 </div>
+            <aside class = "aside"></aside>
 
-                <div class = "moves">
-                    <p>Moves = <span id = "count"></span> </p>
-                    <p>Minimum Moves to Win = 7 </p>
-                </div>
-                    <img id = "undoImage" src="./undo.png" alt="pancake" /></div>
-                <div class ="undo">
-                    <button id="undoButton">undo</button>
-                </div>
+               
+            </div>
+            <div class = "moves">
+                <p>Moves = <span id = "count"></span> </p>
+                <p>Minimum Moves to Win = 7 </p>
+            </div>
+                <img id = "undoImage" src="./undo.png" alt="pancake" /></div>
+            <div class ="undo">
+                <button id="undoButton">undo</button>
             </div>
             <footer>
                 <a href="https://open.spotify.com/track/4hObp5bmIJ3PP3cKA9K9GY", target="_blank">Donut Worry About A Thing</a>

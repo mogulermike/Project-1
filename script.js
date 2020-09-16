@@ -102,7 +102,7 @@ function tower3Start() {
 
 
 function selectPancake() {
-    document.querySelector(`#pancake${selectedPancake}`).style.border = "2px solid red";
+    document.querySelector(`#pancake${selectedPancake}`).style.border = "2px solid black";
     
     tower1.removeEventListener('click', tower1Start);
     tower2.removeEventListener('click', tower2Start);

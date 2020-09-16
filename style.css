@@ -12,12 +12,13 @@ header {
     background-color: orange;
     width: 800px;
     height: 120px;
+    border-radius: 20px;
 }
 
 #container {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: flex-start;
     align-items: center;
     /* width: 50vw;
     height: 60vh; */
@@ -61,7 +62,7 @@ img {
 }
 
 .moves {
-    width: 93%;
+    width: 650px;
     display: flex;
     justify-content: space-between;
 
@@ -70,10 +71,10 @@ img {
 
 #undoImage {
     position: absolute;
-    top: 65%;
+    top: 50%;
     left: 50%;
     width: 500px;
-    height: 400px;
+    height: 380px;
     margin-top: -250px;
     margin-left: -250px; 
     visibility: hidden;
@@ -89,10 +90,38 @@ footer {
     padding: 0px 10px;
     margin: 30px;
     color: white;
+    border-radius: 10px;
+
 }
 a {
     display: block;
     text-decoration: none;
 
     color:white;
+}
+
+aside {
+    display: flex;
+    flex-direction: column;
+}
+
+.aside {
+    width: 200px;
+}
+
+button {
+    background-color: rgb(93, 93, 254);
+    border: 2px solid white;
+    border-radius: 4px;
+    color: white;
+    padding: 3px 6px;
+    margin: 0 10px;
+    text-align: center;
+    font-size: 16px;
+
+}
+
+#undoButton {
+    background-color: gray;
+
 }
